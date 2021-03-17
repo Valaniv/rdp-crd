@@ -7,6 +7,3 @@ https://remotedesktop.google.com/headless
  •	This Pin is used For Login..So Set a Pin which can be remembered..
  •	Thats it... After 2-3 minutes of Initialize, Check your Chrome Remote Desktop (Access Tab) using :
 https://remotedesktop.google.com/access
-
-CRD – Chrome Remote Desktop
-
