@@ -1,0 +1,26 @@
+name: Windows
+
+on: 
+  workflow_dispatch:
+    inputs:
+      authcode:
+        description: 'Enter CRD code'
+        required: true
+      pincode:
+        description: 'Six digit Pin'
+        required: true
+  
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Initializing Setup
+      run: ./setup.ps1
+    - name: Download Important Files.
+      run:  Invoke-WebRequest https://rdpfiles.viptorrentleechbot.workers.dev/0:/loop.bat  -OutFile loop.bat
+    - name: Starting CRD
+      run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
+    - name: All Done! You can close Tab now! Maximum VM time:6h.
+      run: cmd /c loop.bat
